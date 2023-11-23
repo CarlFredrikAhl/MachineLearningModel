@@ -10,4 +10,11 @@ y = data['genre']
 model = DecisionTreeClassifier()
 model.fit(X, y)
 
-joblib.dump(model, 'music_recommender_model.joblib')
+model.dump(model, 'music_recommender_model.joblib')
+
+# Testing so that the trained model works, and it works
+'''
+trained_model = joblib.load('music_recommender_model.joblib') 
+predictions = trained_model.predict([[31, 1]])
+print(predictions)
+'''
